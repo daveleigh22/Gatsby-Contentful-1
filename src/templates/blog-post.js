@@ -5,12 +5,14 @@ class BlogPost extends Component {
     render() {
 
         const {
-            title
+            title,
+            content
         } = this.props.data.contentfulPost
 
         return (
             <div>
                 <h1>{title}</h1>
+                <div dangerouslySetInnerHTML={{__html:content.childMarkdownRemark.html}} ></div>
             </div>
         )
     }
@@ -27,6 +29,13 @@ export const PageQuery = graphql`
         contentfulPost(slug: {eq: $slug}) {
             title
             slug
+            content {
+                id,
+                content,
+                childMarkdownRemark {
+                  html
+                }
+              }
         }
     }
 `

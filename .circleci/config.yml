@@ -23,10 +23,8 @@ jobs:
           name: build
           command: npm run build
       - run:
-          name: Install awscli
-          command: |
-            sudo apt-get install python-pip python-dev
-            sudo pip install awscli
+          name: surge install
+          command: npm install -g surge
       - run:
           name: Deploy
           command: surge --project ./public --domain dave-leigh.surge.sh

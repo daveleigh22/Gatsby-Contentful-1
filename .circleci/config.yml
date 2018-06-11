@@ -23,9 +23,6 @@ jobs:
           name: build
           command: npm run build
       - run:
-          name: surge install
-          command: npm install -g surge
-      - run:
           name: Deploy
           command: surge --project ./public --domain dave-leigh.surge.sh
 

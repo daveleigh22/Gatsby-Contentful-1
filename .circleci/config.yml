@@ -27,5 +27,7 @@ jobs:
           command: |
             sudo apt-get install python-pip python-dev
             sudo pip install awscli
-      - surge --project ./path/to/your-project --domain your-project.surge.sh
+      - run:
+          name: Deploy
+          command: surge --project ./public --domain dave-leigh.surge.sh
 

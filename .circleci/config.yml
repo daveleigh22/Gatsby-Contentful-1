@@ -27,5 +27,5 @@ jobs:
           command: sudo npm install -g surge
       - run:
           name: Deploy
-          command: surge --project ./public --domain dave-leigh.surge.sh
+          command: surge --project ./public --domain daveleigh.surge.sh
 
